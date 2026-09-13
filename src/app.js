@@ -2,6 +2,7 @@
 import express from "express";
 
 import servicesRouter from "./routes/services.router.js";
+import bookingsRouter from "./routes/bookings.router.js";
 
 const app = express();
 
@@ -20,14 +21,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/services', servicesRouter);
+app.use('/api/bookings', bookingsRouter);
 
 export default app;
 
-/*
-Endpoints de la API:
-GET /api/services permite listar todos los servicios.
-GET /api/services/:sid permite obtener un servicio por id.
-POST /api/services permite crear un nuevo servicio.
-PUT /api/services/:sid permite actualizar un servicio existente.
-DELETE /api/services/:sid permite eliminar un servicio.
-*/
